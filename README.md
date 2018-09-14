@@ -11,4 +11,5 @@ To run the algorithm execute the main.py file with 4 arguments:
 * the maximum depth for our tree
 * the minimum number of rows per node
 
-The algorithm may take a while since the splitting technique is very expensive computationally and the gini_index function needs to be calculated on every split.
+The other two .py files needs to be in same folder of the main.py file.
+The algorithm may take a while since the splitting technique is very computationally expensive and the gini_index function needs to be calculated on every split.
