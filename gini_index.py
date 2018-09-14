@@ -11,12 +11,3 @@ def calculate_gini_index(groups, classes):
             score += p * p
         gini += (1.0 - score) * (size / n_instances)
     return gini
-
-
-def main():
-    print(calculate_gini_index([[[1, 1], [1, 0]], [[1, 1], [1, 0]]], [0, 1]))
-    print(calculate_gini_index([[[1, 0], [1, 0]], [[1, 1], [1, 1]]], [0, 1]))
-
-
-if __name__ == "__main__":
-    main()

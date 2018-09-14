@@ -84,15 +84,6 @@ def build_tree(train, max_depth, min_size):
     return root
 
 
-def print_tree(node, depth=0):
-    if isinstance(node, dict):
-        print('%s[X%d < %.3f]' % (depth * ' ', (node['index'] + 1), node['value']))
-        print_tree(node['left'], depth + 1)
-        print_tree(node['right'], depth + 1)
-    else:
-        print('%s[%s]' % (depth * ' ', node))
-
-
 def predict(node, row):
     if row[node['index']] < node['value']:
         if isinstance(node['left'], dict):
@@ -128,7 +119,7 @@ def main():
     n_folds = int(sys.argv[2])
     max_depth = int(sys.argv[3])
     min_size = int(sys.argv[4])
-    print(sys.argv)
+    print('Initializing algorithm with parameters: %s' % sys.argv)
     scores = evaluate_algorithm(dataset, decision_tree, n_folds, max_depth, min_size)
     print('Scores: %s' % scores)
     print('Mean Accuracy: %.3f%%' % (sum(scores) / float(len(scores))))
